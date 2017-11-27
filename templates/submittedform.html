@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %}After Submission {% endblock %} {% block page_content %}
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="page-header">
+            <h1>Hello {{name}}:</h1>
+        </div>
+
+        <div>
+            <h2>Thanks for your submission</h2>
+            <p>Here's a review of the information that you sent:</p>
+            <p>
+                <strong>Name</strong>: {{name}} <br>
+                <strong>Email</strong>: {{email}} <br>
+                <strong>Website URL</strong>: {{site}} <br>
+                <strong>Comments</strong>: {{comments}} <br/>
+                <strong>Submitted</strong>: {{moment(timestamp).format('LLLL')}}
+             </p>
+            <a class="btn btn-primary" href="{{ url_for('form') }}">Once more</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
